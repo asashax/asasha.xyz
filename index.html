@@ -14,17 +14,18 @@
     
     new fairyDustCursor({ colors: ["#ffffff"], });
   </script>
+  <audio id="audio" loop controls style="display: none;" preload="auto">
+    <source src="music/bgm.mp3" type="audio/mpeg">
+  </audio>
   <body id="cursor" oncontextmenu="return false">
     <script>
-      var audio = new Audio();
+      var audio = document.getElementById("audio");
       
       var clicked = false;
       var muted = false;
 
       function playSong() {
-        audio.src = "https://cdn.glitch.me/99e93c41-6a5b-4b68-adfd-b4b0baa1e50e/bgm.mp3";
-        audio.loop = true;
-        audio.controls = false;
+        audio.load();
         audio.play();
       }
 
