@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <header name = "Access-Control-Allow-Origin" value = "*" /> 
+    <header name="Access-Control-Allow-Origin" value="*" /> 
     <link rel="icon" type="image/png" href="images/whiteHeart.png">
     <title>as☆sha ♡ | my profile ★</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,17 +15,16 @@
     new fairyDustCursor({ colors: ["#ffffff"], });
   </script>
   <body id="cursor" oncontextmenu="return false">
-    <audio id="audio" loop controls style="display: none;" crossorigin="anonymous" preload="auto">
-      <source src="https://cdn.glitch.me/99e93c41-6a5b-4b68-adfd-b4b0baa1e50e/bgm.mp3" type="audio/mpeg">
-      ur browser is too old/doesn't support music players, use a newer one 🤶
-    </audio>
     <script>
-      var audio = document.getElementById("audio");
+      var audio = new Audio();
       
       var clicked = false;
       var muted = false;
 
       function playSong() {
+        audio.src = "https://cdn.glitch.me/99e93c41-6a5b-4b68-adfd-b4b0baa1e50e/bgm.mp3";
+        audio.loop = true;
+        audio.controls = false;
         audio.play();
       }
 
