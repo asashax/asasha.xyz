@@ -25,6 +25,8 @@
       var muted = false;
 
       function playSong() {
+        audio.crossOrigin = "anonymous";
+        
         audio.play();
       }
 
