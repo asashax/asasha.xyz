@@ -13,8 +13,33 @@
     
     new fairyDustCursor({ colors: ["#ffffff"], });
   </script>
+  <script>
+    var seconds = 5;
+    var foo;
+
+    function redirect() {
+      window.location.href = "https://discord.gg/bQpbXHEtxH";
+    }
+
+    function updateSeconds() {
+      document.getElementById("countdown").innerHTML = seconds;
+      seconds--;
+      if (seconds == -1) {
+        clearInterval(foo);
+        redirect();
+      }
+    }
+
+    function countdownTimer() {
+      foo = setInterval(function() {
+        updateSeconds();
+      }, 1000);
+    }
+
+    countdownTimer();
+  </script>
   <body id="cursor" oncontextmenu="return false">
-    <h1>redirecting...</h1>
+    <h1>redirecting in <span id="countdown">5</span> seconds...</h1>
   </body>
   <script>
     document.onkeydown = (e) => {
