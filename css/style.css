@@ -55,7 +55,7 @@ br {
   width: 395px;
   height: 80px;
   
-  background-color: rgba(255, 234, 245, 0.15);
+  background-color: rgba(255, 255, 255, 0.15);
 
   backdrop-filter: blur(5px);
   border-radius: 12.5px;
@@ -89,7 +89,7 @@ img {
   width: 500px;
   height: 525px;
 
-  background-color: rgba(255, 234, 245, 0.05);
+  background-color: rgba(255, 255, 255, 0.05);
 
   backdrop-filter: blur(5px);
   border-radius: 25px;
@@ -107,7 +107,7 @@ img {
   width: 500px;
   height: 600px;
 
-  background-color: rgba(255, 234, 245, 0.05);
+  background-color: rgba(255, 255, 255, 0.05);
 
   backdrop-filter: blur(5px);
   border-radius: 25px;
@@ -205,7 +205,7 @@ img {
   width: 50px;
   height: 50px;
 
-  background-color: rgba(255, 234, 245, 0.15);
+  background-color: rgba(255, 255, 255, 0.15);
 
   backdrop-filter: blur(5px);
   border-radius: 12.5px;
