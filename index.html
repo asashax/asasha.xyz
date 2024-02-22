@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" href="./images/pinkHeart.png">
+    <title>as☆sha ♡ | my profile ★</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <script type="module">
+    import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+    
+    new fairyDustCursor({ colors: ["#ffffff"], });
+  </script>
+  <body id="cursor" oncontextmenu="return false">
+    <audio id="audio" loop controls style="display: none;" preload="auto">
+      <source src="./music/bgm.mp3" type="audio/mpeg">
+      ur browser is too old/doesn't support music players, use a newer one 🤶
+    </audio>
+    <script>
+      var audio = document.getElementById("audio");
+      
+      var clicked = false;
+      var muted = false;
+
+      function playSong() {
+        audio.play();
+      }
+
+      function muteSong() {
+        if (!muted) {
+          muted = true;
+
+          audio.muted = true;
+        }
+        else if (muted) {
+          muted = false;
+
+          audio.muted = false;
+        }
+      }
+      
+      function clickToEnterButton() {
+        if (!clicked) {
+          const enterSound = new Audio();
+          enterSound.src = "./sounds/enter.mp3";
+          enterSound.volume = 0.5;
+          enterSound.play();
+          
+          setTimeout(playSong, 3000);
+          
+          document.getElementById("enterDiv").remove();
+          document.getElementById("main").className = "mainVisible";
+
+          clicked = true;
+        }
+      }
+    </script>
+    <div class="visualizer">
+      <canvas id="canvas"></canvas>
+      <script>
+        window.onload = function() {
+
+          var audio = document.getElementById("audio");
+
+          var context = new AudioContext();
+          var src = context.createMediaElementSource(audio);
+          var analyser = context.createAnalyser();
+
+          var canvas = document.getElementById("canvas");
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          var ctx = canvas.getContext("2d");
+
+          src.connect(analyser);
+          analyser.connect(context.destination);
+
+          analyser.fftSize = 256;
+
+          var bufferLength = analyser.frequencyBinCount;
+
+          var dataArray = new Uint8Array(bufferLength);
+
+          var WIDTH = canvas.width;
+          var HEIGHT = canvas.height;
+
+          var barWidth = (WIDTH / bufferLength) * 2.5;
+          var barHeight;
+          var x = 0;
+
+          function renderFrame() {
+            requestAnimationFrame(renderFrame);
+
+            x = 0;
+
+            analyser.getByteFrequencyData(dataArray);
+
+            ctx.fillStyle = "#000";
+            ctx.fillRect(0, 0, WIDTH, HEIGHT);
+            ctx.clearRect(0, 0, WIDTH, HEIGHT);
+
+            for (var i = 0; i < bufferLength; i++) {
+              barHeight = dataArray[i];
+
+              /* var r = barHeight + (25 * (i/bufferLength));
+              var g = 250 * (i/bufferLength);
+              var b = 50; */
+
+              var r = 255;
+              var g = 255;
+              var b = 255;
+
+              ctx.fillStyle = "rgba(" + r + "," + g + "," + b + ", 0.2)";
+              ctx.fillRect(x, HEIGHT - barHeight, barWidth, barHeight);
+
+              x += barWidth + 1;
+            }
+          }
+
+          renderFrame();
+      };
+      </script>
+      <script>
+        var youtubeLink = "https://www.youtube.com/@missasasha";
+        var twitterLink = "https://twitter.com/missasasha";
+        var spotifyLink = "https://open.spotify.com/user/25jzqxv8f4aylwx734szq52u6?si=91b714897ff14b06";
+        var soundcloudLink = "https://soundcloud.com/pianskef-s";
+        var tiktokLink = "https://www.tiktok.com/@asashaaa_xx";
+        var lastfmLink = "https://www.last.fm/user/asashaaa";
+        
+        function openSocialMedia(platform) {
+          switch (platform) {
+            case "youtube":
+              window.open(youtubeLink);
+              break;
+            case "twitter":
+              window.open(twitterLink);
+              break;
+            case "spotify":
+              window.open(spotifyLink);
+              break;
+            case "soundcloud":
+              window.open(soundcloudLink);
+              break;
+            case "tiktok":
+              window.open(tiktokLink);
+              break;
+            case "lastfm":
+              window.open(lastfmLink);
+              break;
+          }
+        }
+      </script>
+    </div>
+    <div id="enterDiv" class="clickToEnter">
+      <button class="enterBtn" onclick="clickToEnterButton()">click to enter!</button>
+    </div>
+    <div id="main" class="mainHidden">
+      <br>
+      <img src="images/pfp/21.jpg" class="pfp"></img>
+      <h1 class="username">as☆sha ♡</h1>
+      <h2 class="discordInvite">.gg/bQpbXHEtxH</h2>
+      <br>
+      <button id="mute" class="muteBtn" onclick="muteSong(); changeMuteImg();"><img id="muteImgId" class="muteImg" src="./images/player/unmuted.png" alt="Mute/Unmute"></button>
+      <br>
+      <img class="discordUser" src="https://discord.c99.nl/widget/theme-4/1015677321077854349.png"></img>
+      <br>
+      <button class="socialBtn" onclick="openSocialMedia('youtube')"><img class="socialMediaImg" src="./images/socials/youtube.png"><br></button>
+      <button class="socialBtn" onclick="openSocialMedia('twitter')"><img class="socialMediaImg" src="./images/socials/twitter.png"><br></button>
+      <button class="socialBtn" onclick="openSocialMedia('spotify')"><img class="socialMediaImg" src="./images/socials/spotify.png"><br></button>
+      <button class="socialBtn" onclick="openSocialMedia('soundcloud')"><img class="socialMediaImg" src="./images/socials/soundcloud.png"><br></button>
+      <button class="socialBtn" onclick="openSocialMedia('tiktok')"><img class="socialMediaImg" src="./images/socials/tiktok.png"><br></button>
+      <button class="socialBtn" onclick="openSocialMedia('lastfm')"><img class="socialMediaImg" src="./images/socials/lastfm.png"></button>
+      <br>
+    </div>
+  </body>
+  <script>
+    var muteImg = document.getElementById("muteImgId");
+    
+    function changeMuteImg() {
+      if (!muted) {
+        muteImg.src = "images/player/unmuted.png";
+      }
+      else if (muted) {
+        muteImg.src = "images/player/muted.png";
+      }
+    }
+  </script>
+  <script>
+    document.onkeydown = (e) => {
+        if (e.key == 123) {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.key == 'U') {
+            e.preventDefault();
+        }
+    };
+  </script>
+</html>
