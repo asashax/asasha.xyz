@@ -1,1 +1,38 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="images/whiteHeart.png">
+    <title>as☆sha ♡ | my profile ★</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/misc.css" type="text/css">
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+  </head>
+  <script type="module">
+    import { fairyDustCursor } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+    
+    new fairyDustCursor({ colors: ["#ffffff"], });
+  </script>
+  <body id="cursor" oncontextmenu="return false">
+    <h1>redirecting...</h1>
+  </body>
+  <script>
+    document.onkeydown = (e) => {
+        if (e.key == 123) {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.key == 'U') {
+            e.preventDefault();
+        }
+    };
+  </script>
+</html>
