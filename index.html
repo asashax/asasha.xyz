@@ -15,7 +15,7 @@
   </script>
   <body id="cursor" oncontextmenu="return false">
     <audio id="audio" loop controls style="display: none;" preload="auto">
-      <source src="./music/bgm.mp3" type="audio/mpeg">
+      <source src="music/bgm.mp3" type="audio/mpeg">
       ur browser is too old/doesn't support music players, use a newer one 🤶
     </audio>
     <script>
@@ -44,7 +44,7 @@
       function clickToEnterButton() {
         if (!clicked) {
           const enterSound = new Audio();
-          enterSound.src = "./sounds/enter.mp3";
+          enterSound.src = "sounds/enter.mp3";
           enterSound.volume = 0.5;
           enterSound.play();
           
@@ -188,7 +188,7 @@
     }
   </script>
   <script>
-    /* document.onkeydown = (e) => {
+    document.onkeydown = (e) => {
         if (e.key == 123) {
             e.preventDefault();
         }
@@ -204,6 +204,6 @@
         if (e.ctrlKey && e.key == 'U') {
             e.preventDefault();
         }
-    }; */
+    };
   </script>
 </html>
