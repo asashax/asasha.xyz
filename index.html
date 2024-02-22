@@ -60,7 +60,7 @@
     <div class="visualizer">
       <canvas id="canvas"></canvas>
       <script>
-        window.onload = function() {
+        function startVisualizer() {
 
           var audio = document.getElementById("audio");
 
@@ -154,7 +154,7 @@
       </script>
     </div>
     <div id="enterDiv" class="clickToEnter">
-      <button class="enterBtn" onclick="clickToEnterButton()">click to enter!</button>
+      <button class="enterBtn" onclick="clickToEnterButton(); startVisualizer();">click to enter!</button>
     </div>
     <div id="main" class="mainHidden">
       <br>
