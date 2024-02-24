@@ -24,7 +24,7 @@ h1 {
 }
 
 .username {
-  background: -webkit-linear-gradient(#ffeaf5, #fec1e1);
+  background: -webkit-linear-gradient(#ffdcdd, #ffffff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
