@@ -1,1 +1,68 @@
-hi
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="/images/whiteHeart.png">
+    <title>as☆sha ♡ | redirecting...</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="as☆sha ♡ | redirect" property="og:title">
+    <meta content="my script commissions! ♥" property="og:description">
+    <meta content="https://asasha.xyz/" property="og:url">
+    <meta content="https://asasha.xyz/images/whiteHeart.png" property="og:image">
+    <meta content="#FFFFFF" data-react-helmet="true" name="theme-color">
+    <link rel="stylesheet" href="/css/misc.css" type="text/css">
+    <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+  </head>
+  <script type="module">
+    import { textFlag } from "https://unpkg.com/cursor-effects@latest/dist/esm.js";
+    
+    new textFlag({ text: "redirecting...", color: ["#ffffff"], });
+  </script>
+  <script>
+    var seconds = 5;
+    var foo;
+
+    function redirect() {
+      window.location.href = "https://trello.com/b/aozJNbla/%E3%83%BB%E2%9D%A5%E3%83%BB-as%E2%98%86sha-%E2%99%A1s-comms";
+    }
+
+    function updateSeconds() {
+      document.getElementById("countdown").innerHTML = seconds;
+      seconds--;
+      if (seconds == -1) {
+        clearInterval(foo);
+        redirect();
+      }
+    }
+
+    function countdownTimer() {
+      foo = setInterval(function() {
+        updateSeconds();
+      }, 1000);
+    }
+
+    countdownTimer();
+  </script>
+  <body id="cursor" oncontextmenu="return false">
+    <h1>redirecting in <span id="countdown">5</span> seconds...</h1>
+  </body>
+  <script>
+    document.onkeydown = (e) => {
+        if (e.key == 123) {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.shiftKey && e.key == 'I') {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.shiftKey && e.key == 'C') {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.shiftKey && e.key == 'J') {
+            e.preventDefault();
+        }
+        if (e.ctrlKey && e.key == 'U') {
+            e.preventDefault();
+        }
+    };
+  </script>
+</html>
